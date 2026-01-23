@@ -1,6 +1,9 @@
-package dev.mello.cadastroninjas;
+package dev.mello.cadastroninjas.Ninjas;
 
+import dev.mello.cadastroninjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+
 
 @Entity
 @Table(name = "tb_cadastro_de_ninjas")
@@ -10,7 +13,13 @@ public class NinjaModel {
     private Long id;
     private String ninja, email;
     private int idade;
-    private String aldeia;
+
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // chave estrangeira
+    private MissoesModel missoes;
+
+    
+
 
     public NinjaModel() {
     }
@@ -44,14 +53,6 @@ public class NinjaModel {
     public void setIdade(int idade) {
         this.idade = idade;
     }
-
-
-
-
-
-
-
-
 
 
 }
