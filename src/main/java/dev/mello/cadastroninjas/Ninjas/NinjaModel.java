@@ -2,11 +2,16 @@ package dev.mello.cadastroninjas.Ninjas;
 
 import dev.mello.cadastroninjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
 @Table(name = "tb_cadastro_de_ninjas")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,41 +23,10 @@ public class NinjaModel {
     @JoinColumn(name = "missoes_id") // chave estrangeira
     private MissoesModel missoes;
 
-    
 
 
-    public NinjaModel() {
-    }
 
-    public NinjaModel(String ninja, String email, int idade) {
-        this.ninja = ninja;
-        this.email = email;
-        this.idade = idade;
-    }
 
-    public String getNinja() {
-        return ninja;
-    }
-
-    public void setNinja(String ninja) {
-        this.ninja = ninja;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
 
 
 }
