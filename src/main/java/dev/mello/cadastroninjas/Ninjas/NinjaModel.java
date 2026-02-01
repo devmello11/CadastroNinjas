@@ -16,8 +16,10 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String ninja, email;
+    private String ninja;
     private int idade;
+    @Column(unique = true)
+    private String email;
 
     @ManyToOne
     @JoinColumn(name = "missoes_id") // chave estrangeira
