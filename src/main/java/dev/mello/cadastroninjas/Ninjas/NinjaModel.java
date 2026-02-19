@@ -15,11 +15,20 @@ import lombok.NoArgsConstructor;
 public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "id")
     private Long id;
-    private String ninja;
+
+    @Column (name = "nome")
+    private String nome;
+
+    @Column (name = "idade")
     private int idade;
+
     @Column(unique = true)
     private String email;
+
+    @Column(name = "img_url")
+    private String imgUrl;
 
     @ManyToOne
     @JoinColumn(name = "missoes_id") // chave estrangeira
