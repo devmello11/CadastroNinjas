@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class MissoesModel {
 
     //Um ninja tem uma missão.
     @OneToMany(mappedBy = "missoes")
+    @ToString.Exclude
     private List<NinjaModel> ninjas;
 
 

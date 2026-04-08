@@ -10,7 +10,7 @@ public class NinjaController {
 
     @GetMapping("/boasvindas")
     public String boasVindas(){
-        return "Boas vindas sua Api está funcionando na rota boasvindas";
+        return "Boas vindassss sua Api está funcionando na rota boasvindas";
     }
 
 
